@@ -1,0 +1,8 @@
+public int sumAllDigits(int number) {
+    int sum = number % 10;
+
+    if(number/10 < 10){
+        return sum + number/10;
+    }else{
+        return sum + sumAllDigits(number/10);
+}
