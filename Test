@@ -1,24 +1,30 @@
-public class Numbers
- {
-   public static void main(int givenNum)
-   { 
-       int n= givenNum
-       int rev=0;
+import java.util.Scanner;
 
-       while(n>0)
-       {
-          
-          int digit=n%10;
-          rev=(rev*10)+digit;
-          n=n/10;
-      }
-      if(rev==givenNum)
-      { 
-         System.out.println(givenNum+"is a palindrome ");
-      }
-      else
-      {
-         System.out.pritnln(givenNum+"is not a palindrome");
-      }
-  }
+public class Test{
+
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		
+		System.out.print("Enter an integer: ");
+		int number = input.nextInt();
+
+	
+		System.out.println(number + (isPalindrome(number) ? " is " : " is not ") +
+			"a palindrome.");
+	}
+
+
+	public static boolean isPalindrome(int number) {
+		return number == reverse(number) ? true : false;
+	}
+
+	public static int reverse(int number) {
+		String reverse = ""; 	
+		String n = number + ""; 
+	
+		for (int i = n.length() - 1; i >= 0; i--) {
+			reverse += n.charAt(i);
+		}
+		return Integer.parseInt(reverse);
+	}
 }
