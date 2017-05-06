@@ -1,8 +1,24 @@
-public int sumAllDigits(int number) {
-    int sum = number % 10;
+public class Numbers
+ {
+   public static void main(int givenNum)
+   { 
+       int n= givenNum
+       int rev=0;
 
-    if(number/10 < 10){
-        return sum + number/10;
-    }else{
-        return sum + sumAllDigits(number/10);
+       while(n>0)
+       {
+          
+          int digit=n%10;
+          rev=(rev*10)+digit;
+          n=n/10;
+      }
+      if(rev==givenNum)
+      { 
+         System.out.println(givenNum+"is a palindrome ");
+      }
+      else
+      {
+         System.out.pritnln(givenNum+"is not a palindrome");
+      }
+  }
 }
